@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Take On the Full Sail Code Challenge</title>
+  <style>
+    :root {
+      --bg: #080d1a;
+      --panel: #121a31;
+      --panel-2: #182243;
+      --text: #f7f9ff;
+      --muted: #c4d0f3;
+      --accent: #42d6ff;
+      --accent-2: #8f7dff;
+      --ok: #9cffc7;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% -20%, #1f3572 0%, transparent 55%),
+                  radial-gradient(900px 500px at 100% 0%, #3a2778 0%, transparent 58%),
+                  var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 5.5rem 0 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0 auto;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .actions {
+      margin-top: 1.8rem;
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #061126;
+      font-weight: 700;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      background: linear-gradient(135deg, var(--accent), #7ce7ff);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(66, 214, 255, 0.35);
+      filter: saturate(1.08);
+      outline: none;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: #6d7fbd;
+    }
+
+    main {
+      padding: 1rem 0 4rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+      border: 1px solid rgba(181, 205, 255, 0.2);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .card h2 {
+      margin: 0 0 0.7rem;
+      font-size: 1.25rem;
+    }
+
+    .card p,
+    .card li,
+    .card dd {
+      color: #e6edff;
+    }
+
+    .span-12 { grid-column: span 12; }
+    .span-6 { grid-column: span 6; }
+
+    dl {
+      margin: 0;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.35rem 0.8rem;
+    }
+
+    dt { font-weight: 700; color: var(--ok); }
+    dd { margin: 0; }
+
+    ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .contact strong { color: var(--ok); }
+
+    footer {
+      padding: 1rem 0 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 820px) {
+      .span-6 { grid-column: span 12; }
+      .hero { padding-top: 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Take On the Full Sail Code Challenge</h1>
+      <p>
+        Ready to put your programming skills to the test? Join us from <strong>Friday, June 26 at 6:00 PM ET</strong>
+        through <strong>Saturday, June 27 at 11:59 PM ET</strong> for the <strong>Full Sail University Code Challenge</strong>.
+      </p>
+      <p>
+        This is a two-day online competition open to both online and campus students. Participants compete on HackerRank in a
+        fast-paced, hands-on coding experience designed to sharpen technical skills, strengthen problem-solving abilities, and showcase creativity.
+      </p>
+      <div class="actions">
+        <!-- TODO: Replace href with the real registration/HackerRank URL -->
+        <a class="btn" href="#">Register / Start on HackerRank</a>
+        <a class="btn btn-secondary" href="#event-details" data-scroll="true">View Event Details</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="event-details">
+    <div class="grid">
+      <section class="card span-6" aria-labelledby="event-details-heading">
+        <h2 id="event-details-heading">Event Details</h2>
+        <dl>
+          <dt>Begins:</dt><dd>Friday, June 26 at 6:00 PM ET</dd>
+          <dt>Ends:</dt><dd>Saturday, June 27 at 11:59 PM ET</dd>
+          <dt>Location:</dt><dd>Online</dd>
+          <dt>Platform:</dt><dd>HackerRank</dd>
+          <dt>Format:</dt><dd>Individual competition, no teams</dd>
+        </dl>
+      </section>
+
+      <section class="card span-6" aria-labelledby="prizes-heading">
+        <h2 id="prizes-heading">Prizes</h2>
+        <ul>
+          <li>Nintendo Switch Bundle</li>
+          <li>Steam Deck</li>
+          <li>Bragging rights as Full Sail Code Challenge Champion</li>
+        </ul>
+      </section>
+
+      <section class="card span-6" aria-labelledby="guidelines-heading">
+        <h2 id="guidelines-heading">Important Guidelines</h2>
+        <ul>
+          <li>This is an individual competition. Teamwork or collaboration is not permitted.</li>
+          <li>The challenge is AI proctored.</li>
+          <li>The assessment is timed.</li>
+          <li>Students should begin only when they are ready to work uninterrupted.</li>
+          <li>Students should close unnecessary applications, browser tabs, and windows before starting.</li>
+          <li>Students should not have other screens or additional monitors attached while taking the challenge.</li>
+          <li>Students should follow all HackerRank instructions during the assessment.</li>
+        </ul>
+      </section>
+
+      <section class="card span-6" aria-labelledby="checklist-heading">
+        <h2 id="checklist-heading">Before You Click Start</h2>
+        <ul>
+          <li>Stable internet connection</li>
+          <li>Enough uninterrupted time to complete the challenge</li>
+          <li>Unnecessary browser tabs and apps are closed</li>
+          <li>No additional monitors or screens are connected</li>
+          <li>Ready to begin because the timer starts immediately</li>
+        </ul>
+      </section>
+
+      <section class="card span-12 contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Need Help / Contact</h2>
+        <p><strong>Rebecca Carroll</strong></p>
+        <p>Email: <a href="mailto:rcarroll@fullsail.com">rcarroll@fullsail.com</a></p>
+        <p>Discord user ID: <strong>267161747507511297</strong></p>
+        <p>
+          Participants can message Rebecca in the event Discord server if available.
+          <!-- TODO: Add event Discord server invite/link here when available -->
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Full Sail University Code Challenge
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-scroll="true"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
