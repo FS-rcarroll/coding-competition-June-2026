@@ -1,245 +1,200 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Take On the Full Sail Code Challenge</title>
-  <style>
-    :root {
-      --bg: #080d1a;
-      --panel: #121a31;
-      --panel-2: #182243;
-      --text: #f7f9ff;
-      --muted: #c4d0f3;
-      --accent: #42d6ff;
-      --accent-2: #8f7dff;
-      --ok: #9cffc7;
-      --radius: 16px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Competition June 2026</title>
+    <style>
+      :root {
+        --navy: #0b1f4d;
+        --orange: #f47b20;
+        --white: #ffffff;
+        --light-navy: #142b66;
+      }
 
-    * { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
 
-    body {
-      margin: 0;
-      font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: radial-gradient(1200px 600px at 20% -20%, #1f3572 0%, transparent 55%),
-                  radial-gradient(900px 500px at 100% 0%, #3a2778 0%, transparent 58%),
-                  var(--bg);
-      line-height: 1.6;
-    }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--navy);
+        background: var(--white);
+        line-height: 1.6;
+      }
 
-    .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
-    }
+      .container {
+        width: min(1100px, 92%);
+        margin: 0 auto;
+      }
 
-    .hero {
-      padding: 5.5rem 0 3rem;
-      text-align: center;
-    }
+      header {
+        background: var(--navy);
+      }
 
-    .hero h1 {
-      margin: 0 0 1rem;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
+      .hero-banner {
+        width: 100%;
+        display: block;
+        height: auto;
+        object-fit: contain;
+        background: var(--navy);
+      }
 
-    .hero p {
-      margin: 0 auto;
-      max-width: 760px;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.2rem);
-    }
+      .cta-wrap {
+        text-align: center;
+        padding: 1.5rem 1rem 2rem;
+        background: linear-gradient(180deg, var(--navy) 0%, var(--light-navy) 100%);
+      }
 
-    .actions {
-      margin-top: 1.8rem;
-      display: flex;
-      gap: 0.8rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+      .register-btn {
+        display: inline-block;
+        background: var(--orange);
+        color: var(--white);
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 0.85rem 1.6rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        border: 2px solid transparent;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      }
 
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      color: #061126;
-      font-weight: 700;
-      padding: 0.85rem 1.2rem;
-      border-radius: 999px;
-      border: 2px solid transparent;
-      background: linear-gradient(135deg, var(--accent), #7ce7ff);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-    }
+      .register-btn:hover,
+      .register-btn:focus-visible {
+        background: #d76410;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
+        transform: translateY(-1px);
+        outline: none;
+      }
 
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(66, 214, 255, 0.35);
-      filter: saturate(1.08);
-      outline: none;
-    }
+      main {
+        padding: 2rem 0 3rem;
+      }
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-      border-color: #6d7fbd;
-    }
+      section {
+        padding: 1.25rem 0;
+        border-bottom: 1px solid rgba(11, 31, 77, 0.15);
+      }
 
-    main {
-      padding: 1rem 0 4rem;
-    }
+      section:last-of-type {
+        border-bottom: none;
+      }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 1rem;
-    }
+      h2 {
+        margin: 0 0 0.75rem;
+        color: var(--navy);
+      }
 
-    .card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
-      border: 1px solid rgba(181, 205, 255, 0.2);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      backdrop-filter: blur(4px);
-    }
+      ul {
+        margin: 0.5rem 0 0;
+        padding-left: 1.2rem;
+      }
 
-    .card h2 {
-      margin: 0 0 0.7rem;
-      font-size: 1.25rem;
-    }
+      li + li {
+        margin-top: 0.4rem;
+      }
 
-    .card p,
-    .card li,
-    .card dd {
-      color: #e6edff;
-    }
+      .highlight {
+        color: var(--orange);
+        font-weight: 700;
+      }
 
-    .span-12 { grid-column: span 12; }
-    .span-6 { grid-column: span 6; }
+      .contact a {
+        color: var(--orange);
+        font-weight: 600;
+      }
 
-    dl {
-      margin: 0;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.35rem 0.8rem;
-    }
+      footer {
+        margin-top: 2rem;
+        background: var(--navy);
+        color: var(--white);
+        text-align: center;
+        padding: 1rem;
+      }
 
-    dt { font-weight: 700; color: var(--ok); }
-    dd { margin: 0; }
+      @media (max-width: 700px) {
+        .register-btn {
+          width: 100%;
+          max-width: 320px;
+        }
 
-    ul {
-      margin: 0;
-      padding-left: 1.1rem;
-    }
-
-    .contact strong { color: var(--ok); }
-
-    footer {
-      padding: 1rem 0 2rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 820px) {
-      .span-6 { grid-column: span 12; }
-      .hero { padding-top: 4rem; }
-    }
-  </style>
-</head>
-<body>
-  <header class="hero">
-    <div class="container">
-      <h1>Take On the Full Sail Code Challenge</h1>
-      <p>
-        Ready to put your programming skills to the test? Join us from <strong>Friday, June 26 at 6:00 PM ET</strong>
-        through <strong>Saturday, June 27 at 11:59 PM ET</strong> for the <strong>Full Sail University Code Challenge</strong>.
-      </p>
-      <p>
-        This is a two-day online competition open to both online and campus students. Participants compete on HackerRank in a
-        fast-paced, hands-on coding experience designed to sharpen technical skills, strengthen problem-solving abilities, and showcase creativity.
-      </p>
-      <div class="actions">
-        <!-- TODO: Replace href with the real registration/HackerRank URL -->
-        <a class="btn" href="#">Register / Start on HackerRank</a>
-        <a class="btn btn-secondary" href="#event-details" data-scroll="true">View Event Details</a>
+        main {
+          padding-top: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        class="hero-banner"
+        src="images/code-challenge-hero.png"
+        alt="Coding Competition June 2026 banner"
+      />
+      <div class="cta-wrap">
+        <a class="register-btn" href="#" aria-label="Register now for the coding competition">Register Now</a>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="container" id="event-details">
-    <div class="grid">
-      <section class="card span-6" aria-labelledby="event-details-heading">
-        <h2 id="event-details-heading">Event Details</h2>
-        <dl>
-          <dt>Begins:</dt><dd>Friday, June 26 at 6:00 PM ET</dd>
-          <dt>Ends:</dt><dd>Saturday, June 27 at 11:59 PM ET</dd>
-          <dt>Location:</dt><dd>Online</dd>
-          <dt>Platform:</dt><dd>HackerRank</dd>
-          <dt>Format:</dt><dd>Individual competition, no teams</dd>
-        </dl>
-      </section>
-
-      <section class="card span-6" aria-labelledby="prizes-heading">
-        <h2 id="prizes-heading">Prizes</h2>
-        <ul>
-          <li>Nintendo Switch Bundle</li>
-          <li>Steam Deck</li>
-          <li>Bragging rights as Full Sail Code Challenge Champion</li>
-        </ul>
-      </section>
-
-      <section class="card span-6" aria-labelledby="guidelines-heading">
-        <h2 id="guidelines-heading">Important Guidelines</h2>
-        <ul>
-          <li>This is an individual competition. Teamwork or collaboration is not permitted.</li>
-          <li>The challenge is AI proctored.</li>
-          <li>The assessment is timed.</li>
-          <li>Students should begin only when they are ready to work uninterrupted.</li>
-          <li>Students should close unnecessary applications, browser tabs, and windows before starting.</li>
-          <li>Students should not have other screens or additional monitors attached while taking the challenge.</li>
-          <li>Students should follow all HackerRank instructions during the assessment.</li>
-        </ul>
-      </section>
-
-      <section class="card span-6" aria-labelledby="checklist-heading">
-        <h2 id="checklist-heading">Before You Click Start</h2>
-        <ul>
-          <li>Stable internet connection</li>
-          <li>Enough uninterrupted time to complete the challenge</li>
-          <li>Unnecessary browser tabs and apps are closed</li>
-          <li>No additional monitors or screens are connected</li>
-          <li>Ready to begin because the timer starts immediately</li>
-        </ul>
-      </section>
-
-      <section class="card span-12 contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Need Help / Contact</h2>
-        <p><strong>Rebecca Carroll</strong></p>
-        <p>Email: <a href="mailto:rcarroll@fullsail.com">rcarroll@fullsail.com</a></p>
-        <p>Discord user ID: <strong>267161747507511297</strong></p>
+    <main class="container">
+      <section id="event-details">
+        <h2>Event Details</h2>
         <p>
-          Participants can message Rebecca in the event Discord server if available.
-          <!-- TODO: Add event Discord server invite/link here when available -->
+          Join our two-day online coding competition open to both online and campus students. Compete head-to-head
+          on HackerRank in a fast-paced, hands-on challenge designed to sharpen technical skills and creative
+          problem-solving.
+        </p>
+        <ul>
+          <li><span class="highlight">Dates:</span> June 2026 (2-day event)</li>
+          <li><span class="highlight">Format:</span> Online via HackerRank</li>
+          <li><span class="highlight">Who can join:</span> Campus and online students</li>
+        </ul>
+      </section>
+
+      <section id="prizes">
+        <h2>Prizes</h2>
+        <ul>
+          <li>🏆 1st Place: Grand Prize + Recognition</li>
+          <li>🥈 2nd Place: Runner-up Prize</li>
+          <li>🥉 3rd Place: Merit Prize</li>
+          <li>🎖️ Bonus recognition for creativity and clean code</li>
+        </ul>
+      </section>
+
+      <section id="guidelines">
+        <h2>Competition Guidelines</h2>
+        <ul>
+          <li>Use your registered HackerRank account for all submissions.</li>
+          <li>Submissions must be your own work.</li>
+          <li>Internet access for documentation is allowed unless a challenge states otherwise.</li>
+          <li>Code will be judged on correctness, efficiency, and style.</li>
+          <li>Respect timing windows; late submissions may not be accepted.</li>
+        </ul>
+      </section>
+
+      <section id="checklist">
+        <h2>Before You Click Start</h2>
+        <ul>
+          <li>✅ Confirm your HackerRank login works.</li>
+          <li>✅ Verify your internet connection and power setup.</li>
+          <li>✅ Read all challenge instructions before coding.</li>
+          <li>✅ Prepare your development environment and preferred language.</li>
+          <li>✅ Keep a water bottle and notes nearby — pace yourself.</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>
+          Questions before the event? Reach out to the competition team at
+          <a href="mailto:competition@school.edu">competition@school.edu</a>.
         </p>
       </section>
-    </div>
-  </main>
+    </main>
 
-  <footer>
-    Full Sail University Code Challenge
-  </footer>
-
-  <script>
-    document.querySelectorAll('[data-scroll="true"]').forEach((link) => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-  </script>
-</body>
+    <footer>
+      Coding Competition June 2026 • Build fast, think clearly, compete with creativity.
+    </footer>
+  </body>
 </html>
