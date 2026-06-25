@@ -6,10 +6,14 @@
     <title>Coding Competition June 2026</title>
     <style>
       :root {
+        --bg: #070d1d;
+        --panel: #101a33;
+        --panel-border: rgba(180, 200, 255, 0.22);
+        --text: #eef3ff;
+        --muted: #c4d1f6;
         --navy: #0b1f4d;
         --orange: #f47b20;
         --white: #ffffff;
-        --light-navy: #142b66;
       }
 
       * {
@@ -19,8 +23,10 @@
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: var(--navy);
-        background: var(--white);
+        color: var(--text);
+        background: radial-gradient(900px 400px at 20% -10%, #1a2f66 0%, transparent 60%),
+          radial-gradient(800px 380px at 100% 0%, #2a1e58 0%, transparent 60%),
+          var(--bg);
         line-height: 1.6;
       }
 
@@ -30,21 +36,21 @@
       }
 
       header {
-        background: var(--navy);
+        background: #050a18;
+        padding-top: 1.2rem;
       }
 
       .hero-banner {
-        width: 100%;
+        width: min(1200px, 96%);
+        margin: 0 auto;
         display: block;
         height: auto;
         object-fit: contain;
-        background: var(--navy);
       }
 
       .cta-wrap {
         text-align: center;
-        padding: 1.5rem 1rem 2rem;
-        background: linear-gradient(180deg, var(--navy) 0%, var(--light-navy) 100%);
+        padding: 2rem 1rem 2.5rem;
       }
 
       .register-btn {
@@ -53,8 +59,8 @@
         color: var(--white);
         font-weight: 700;
         font-size: 1.1rem;
-        padding: 0.85rem 1.6rem;
-        border-radius: 0.5rem;
+        padding: 0.9rem 1.8rem;
+        border-radius: 0.6rem;
         text-decoration: none;
         border: 2px solid transparent;
         transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
@@ -63,36 +69,40 @@
       .register-btn:hover,
       .register-btn:focus-visible {
         background: #d76410;
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
         transform: translateY(-1px);
         outline: none;
       }
 
       main {
-        padding: 2rem 0 3rem;
+        padding: 1.5rem 0 3rem;
       }
 
       section {
-        padding: 1.25rem 0;
-        border-bottom: 1px solid rgba(11, 31, 77, 0.15);
-      }
-
-      section:last-of-type {
-        border-bottom: none;
+        padding: 1.1rem 1.2rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+        border: 1px solid var(--panel-border);
+        border-radius: 12px;
       }
 
       h2 {
         margin: 0 0 0.75rem;
-        color: var(--navy);
+        color: var(--white);
+      }
+
+      p,
+      li {
+        color: var(--muted);
       }
 
       ul {
-        margin: 0.5rem 0 0;
+        margin: 0.4rem 0 0;
         padding-left: 1.2rem;
       }
 
       li + li {
-        margin-top: 0.4rem;
+        margin-top: 0.35rem;
       }
 
       .highlight {
@@ -100,51 +110,60 @@
         font-weight: 700;
       }
 
+      .contact-name {
+        color: var(--white);
+        font-weight: 700;
+        margin-bottom: 0.2rem;
+      }
+
       .contact a {
-        color: var(--orange);
-        font-weight: 600;
+        color: #ffb070;
+        font-weight: 700;
       }
 
       footer {
-        margin-top: 2rem;
-        background: var(--navy);
-        color: var(--white);
+        margin-top: 1.5rem;
+        background: #050a18;
+        color: var(--muted);
         text-align: center;
         padding: 1rem;
       }
 
       @media (max-width: 700px) {
+        header {
+          padding-top: 0.7rem;
+        }
+
+        .cta-wrap {
+          padding-top: 1.4rem;
+        }
+
         .register-btn {
           width: 100%;
           max-width: 320px;
-        }
-
-        main {
-          padding-top: 1.25rem;
         }
       }
     </style>
   </head>
   <body>
     <header>
-      <img
-        class="hero-banner"
-        src="coding challenge header.png"
-        alt="Coding Competition June 2026 banner"
-      />
+      <img class="hero-banner" src="coding challenge header.png" alt="Coding Competition June 2026 banner" />
       <div class="cta-wrap">
         <a class="register-btn" href="#" aria-label="Register now for the coding competition">Register Now</a>
       </div>
     </header>
 
     <main class="container">
+      <section id="overview">
+        <h2>Competition Overview</h2>
+        <p>
+          This two-day online coding competition is open to online and campus students. You'll go head-to-head with
+          fellow innovators in a fast-paced HackerRank challenge built to sharpen technical skills and problem-solving.
+        </p>
+      </section>
+
       <section id="event-details">
         <h2>Event Details</h2>
-        <p>
-          Join our two-day online coding competition open to both online and campus students. Compete head-to-head
-          on HackerRank in a fast-paced, hands-on challenge designed to sharpen technical skills and creative
-          problem-solving.
-        </p>
         <ul>
           <li><span class="highlight">Dates:</span> June 2026 (2-day event)</li>
           <li><span class="highlight">Format:</span> Online via HackerRank</li>
@@ -174,7 +193,7 @@
       </section>
 
       <section id="checklist">
-        <h2>Before You Click Start</h2>
+        <h2>Before You Click Start ✓</h2>
         <ul>
           <li>✅ Confirm your HackerRank login works.</li>
           <li>✅ Verify your internet connection and power setup.</li>
@@ -185,16 +204,12 @@
       </section>
 
       <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>
-          Questions before the event? Reach out to the competition team at
-          <a href="mailto:competition@school.edu">competition@school.edu</a>.
-        </p>
+        <h2>Need Help?</h2>
+        <p class="contact-name">Rebecca Carroll</p>
+        <p><a href="mailto:rcarroll@fullsail.com">rcarroll@fullsail.com</a></p>
       </section>
     </main>
 
-    <footer>
-      Coding Competition June 2026 • Build fast, think clearly, compete with creativity.
-    </footer>
+    <footer>Footer</footer>
   </body>
 </html>
