@@ -43,7 +43,17 @@
       .hero {
         background: #050a18;
         border-bottom: 1px solid var(--panel-border);
-        padding: 3rem 0 2.5rem;
+        padding: 2.2rem 0 2.5rem;
+      }
+
+      .hero-banner {
+        width: min(1200px, 100%);
+        display: block;
+        margin: 0 auto 1.25rem;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
       }
 
       h1 {
@@ -181,7 +191,7 @@
 
       @media (max-width: 700px) {
         .hero {
-          padding: 2.2rem 0 2rem;
+          padding: 1.6rem 0 2rem;
         }
 
         .actions {
@@ -207,6 +217,7 @@
   <body>
     <header class="hero">
       <div class="container">
+        <img class="hero-banner" src="coding challenge header.png" alt="Full Sail University Code Challenge banner" />
         <h1>Take On the Full Sail Code Challenge</h1>
         <p>
           Ready to put your programming skills to the test? Join us from <strong>Friday, June 26 at 6:00 PM ET</strong>
