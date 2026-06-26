@@ -136,6 +136,33 @@
         padding: 1.1rem 1.2rem;
       }
 
+      .faq-section .faq-intro {
+        margin: 0.2rem 0 1rem;
+      }
+
+      .faq-section details {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        background: rgba(6, 14, 30, 0.65);
+        padding: 0.75rem 0.9rem;
+      }
+
+      .faq-section details + details {
+        margin-top: 0.65rem;
+      }
+
+      .faq-section summary {
+        cursor: pointer;
+        color: var(--white);
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .faq-section details p,
+      .faq-section details ul {
+        margin: 0.7rem 0 0;
+      }
+
       .span-6 {
         grid-column: span 6;
       }
@@ -211,6 +238,10 @@
         dd {
           margin-bottom: 0.45rem;
         }
+
+        .faq-section details {
+          padding: 0.7rem 0.8rem;
+        }
       }
     </style>
   </head>
@@ -256,8 +287,7 @@
 
         <section class="card span-6" aria-labelledby="prizes-heading">
           <h2 id="prizes-heading">Prizes</h2>
-          3 winnners will earn a Nintendo Switch 2 and 
-          Bragging rights as Full Sail Code Challenge Champion
+          <p>3 winners will earn a Nintendo Switch 2 and bragging rights as Full Sail Code Challenge Champion.</p>
         </section>
 
         <section class="card span-6" aria-labelledby="guidelines-heading">
@@ -286,13 +316,12 @@
             <li>Ready to begin because the timer starts immediately</li>
           </ul>
         </section>
-       
-          <section id="faq" class="faq-section">
-  <div class="container">
-    <h2>Frequently Asked Questions</h2>
-    <p class="faq-intro">
-      Everything you need to know about the Full Sail Code Challenge.
-    </p>
+
+        <section id="faq" class="card span-12 faq-section" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+          <p class="faq-intro">
+            Everything you need to know about the Full Sail Code Challenge.
+          </p>
 
     <details open>
       <summary>What is the Full Sail Code Challenge?</summary>
@@ -483,14 +512,14 @@
         solving as many as you can within the competition time.
       </p>
     </details>
-  </div>
-</section>
+
+        </section>
        
         <section class="card span-12 contact" aria-labelledby="contact-heading">
           <h2 id="contact-heading">Having issues getting into the challenges?</h2>
           <p>Contact: <strong>Rebecca Carroll</strong></p>
           <p>Email: <a href="mailto:rcarroll@fullsail.com">rcarroll@fullsail.com</a> or reach out over Discord: <a href="https://discord.com/channels/@me/123456789012345678" target="_blank"><strong>267161747507511297</strong></a></p>
-          </p> <p>
+          <p>
             <a href="https://discord.gg/t65mAeVeY">Events Discord Server</a> is a great place to connect as well!
             <!-- TODO: Add event Discord server invite/link here when available -->
           </p>
